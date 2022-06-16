@@ -27,3 +27,13 @@
     And request {name: 'Karate', gender: 'Male', phone: 3211231234}
     And method POST
     And status 201
+    * print response
+    * print "message = " , response.success
+    * print "generated id = ", response.data.id
+    # extract id into a variable and send get request
+    * def id = response.data.id
+    #/spartans/118
+    Given path "spartans" , id
+    And method GET
+    Then status 200
+    And match response.name == "Karate"
