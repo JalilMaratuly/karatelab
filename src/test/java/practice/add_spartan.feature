@@ -20,3 +20,10 @@
           "phone": 3211231234
         }
       """
+  Scenario: Add new spartan
+    Given path "spartans"
+    And header Content-Type = "application/json"
+    #add request json body
+    And request {name: 'Karate', gender: 'Male', phone: 3211231234}
+    And method POST
+    And status 201
