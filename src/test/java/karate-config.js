@@ -6,7 +6,8 @@ function fn() {
   }
   var config = {
     env: env,
-	hello_world_api_url: 'https://sandbox.api.service.nhs.uk/hello-world'
+	hello_world_api_url: 'https://sandbox.api.service.nhs.uk/hello-world',
+    spartan_base_url: 'http://54.156.66.212:8000/api'
   }
   if (env == 'dev') {
     // customize
