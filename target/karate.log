@@ -1,0 +1,35 @@
+19:15:12.680 [main] INFO  com.intuit.karate - Karate version: 1.2.0
+19:15:12.801 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+19:15:12.817 [main] INFO  c.intuit.karate.core.FeatureRuntime - found scenario at line: 4
+19:15:13.287 [main] INFO  com.intuit.karate - karate.env system property was: null 
+19:15:13.475 [main] DEBUG com.intuit.karate - request:
+1 > GET https://sandbox.api.service.nhs.uk/hello-world/hello/world
+1 > Host: sandbox.api.service.nhs.uk
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/15.0.7)
+1 > Accept-Encoding: gzip,deflate
+
+
+19:15:14.242 [main] DEBUG com.intuit.karate - response time in milliseconds: 766
+1 < 200
+1 < Date: Thu, 16 Jun 2022 00:15:12 GMT
+1 < Content-Type: application/json; charset=UTF-8
+1 < Content-Length: 32
+1 < Connection: keep-alive
+1 < x-powered-by: Express
+1 < access-control-allow-origin: 
+1 < access-control-allow-methods: GET, PUT, POST, DELETE
+1 < access-control-allow-headers: origin, x-requested-with, accept, content-type, authorization, apikey
+1 < access-control-allow-credentials: 
+1 < accept-ranges: bytes
+1 < cache-control: public, max-age=0
+1 < last-modified: Mon, 13 Jun 2022 11:43:28 GMT
+1 < etag: W/"20-1815ce03b00"
+1 < Access-Control-Max-Age: 3628800
+1 < Strict-Transport-Security: max-age=864000; includeSubDomains
+{
+  "message": "Hello World!"
+}
+
+
+19:15:14.652 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) src/test/java/practice/hello.feature
