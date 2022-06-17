@@ -33,5 +33,14 @@
       And method GET
       Then status 200
       And match header Content-Type == "application/json"
+      * print "total element count = " , response.totalElement
+      And match response.totalElement == 32
+      * print "first name of first person = " , response.content[0].name
+      ##* print "all first names in response = " , response.content[*].name
+    #verify Jaimie is amoung the names
+      And match response.content[*].name contains "Jaimie"
+      #verify Lorenza, Nona, Elisabeth are among the names
+      * match response.content[*].name contains ["Lorenza", "Nona", "Elisabeth"]
 
-      #BREAK TILL 6:05 PM EST
+      #check if each gender value is "Female"
+      * match each response.content[*].gender == "Female"
