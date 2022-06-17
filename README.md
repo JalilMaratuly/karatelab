@@ -176,3 +176,86 @@ And match header Content-Type == "application/json; charset=UTF-8"
 
 ================================================
 
+
+06/16/2022
+----------
+
+Karate Intro Day 2.
+
+Spartan App Ip addresses:
+
+http://54.156.66.212/
+http://3.233.187.197/
+
+http://54.156.66.212:8000
+
+add new feature file:
+get_spartans.feature
+
+
+http://54.156.66.212:8000/api/spartans
+
+http://3.233.187.197:8000/api
+
+http://54.156.66.212:8000/api/spartans/search?nameContains=A&gender=Female
+=============================
+
+Verify data using karate
+
+* match response.name == "Meade"
+
+------------------
+Declare variables:
+
+* def phone = response.phone
+* def num1 = 10
+* def num2 = 20
+
+------------------
+
+Pass query parameters:
+
+And param gender = "Female"
+And param nameContains = "A"
+
+------------------
+
+Verifying list of values using Contains
+
+And match response.content[*].name contains "Jaimie"
+#verify Lorenza, Nona, Elisabeth are among the names
+* match response.content[*].name contains ["Lorenza", "Nona", "Elisabeth"]
+
+-------------------
+
+Read value from certain index:
+
+* print "first name of first person = " , response.content[0].name
+
+-------------------
+
+UI automation using Karate:
+
+Scenario: Search for SDET jobs on google
+Given driver google_url
+And input('input[name=q]','SDET remote jobs')
+And click('input[name=btnK]')
+And click('div[id=hdtb-tls]')
+
+--------------------
+
+How to use java class method from karate feature file:
+
+Scenario: Call Utils.getName() method
+#assign Utils class object into Utils variable
+* def Utils = Java.type("practice.Utils")
+
+Summary:
+As SDET I always try new tools , and recently I added API smoke test using KARATE tool.
+
+	-> karate feature files
+	-> BDD keywords , When, then etc
+	-> use pre-defined methods
+	-> declare/define variables
+	etc
+
